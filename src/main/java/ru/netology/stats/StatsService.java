@@ -9,9 +9,11 @@ public class StatsService {
         }
         return sum;
     }
+
     public int findAverage(int[] purchase) {
         return calculateSum(purchase) / purchase.length;
     }
+
     public int minPurchase(int[] purchases) {
         int minMonth = 0;
         int month = 0; // переменная для индекса рассматриваемого месяца в массиве
@@ -42,8 +44,9 @@ public class StatsService {
 
     public int lowMonthSum(int[] purchases) {
         int count = 0;
-        for (int i=0; i<purchases.length;i++) {
-            if (purchases[i] < findAverage(purchases)) {
+        int average = findAverage(purchases);
+        for (int i = 0; i < purchases.length; i++) {
+            if (purchases[i] < average) {
                 count++;
             }
         }
@@ -52,8 +55,9 @@ public class StatsService {
 
     public int highMonthSum(int[] purchases) {
         int count = 0;
-        for (int i=0; i<purchases.length;i++) {
-            if (purchases[i] > findAverage(purchases)) {
+        int average = findAverage(purchases);
+        for (int i = 0; i < purchases.length; i++) {
+            if (purchases[i] > average) {
                 count++;
             }
         }
